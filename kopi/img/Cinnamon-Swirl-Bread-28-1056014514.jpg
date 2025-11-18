@@ -1,0 +1,97 @@
+using System;
+using System.Collections.Generic;
+
+class Book
+{
+    public string Name { get; set; }
+    public string Author { get; set; }
+    public int Pages { get; set; }
+    public double Price { get; set; }
+
+    public Book(string name, string author, int pages, double price)
+    {
+        Name = name;
+        Author = author;
+        Pages = pages;
+        Price = price;
+    }
+}
+
+class BookInventory
+{
+    private List<Book> books;
+
+    public BookInventory()
+    {
+        books = new List<Book>();
+    }
+
+    public void AddBook(Book book)
+    {
+        books.Add(book);
+    }
+
+    public void DisplayBooks()
+    {
+        if (books.Count == 0)
+        {
+            Console.WriteLine("No books in inventory.");
+            return;
+        }
+
+        Console.WriteLine("Book Inventory:");
+        for (int i = 0; i < books.Count; i++)
+        {
+            Console.WriteLine($"Book {i + 1}:");
+            Console.WriteLine($"Name: {books[i].Name}");
+            Console.WriteLine($"Author: {books[i].Author}");
+            Console.WriteLine($"Pages: {books[i].Pages}");
+            Console.WriteLine($"Price: ${books[i].Price}");
+            Console.WriteLine();
+        }
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        BookInventory inventory = new BookInventory();
+
+        while (true)
+        {
+            Console.WriteLine("1. Add a book");
+            Console.WriteLine("2. View all books");
+            Console.WriteLine("3. Exit");
+
+            Console.Write("Enter your choice: ");
+            string choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case "1":
+                    Console.Write("Enter book name: ");
+                    string name = Console.ReadLine();
+                    Console.Write("Enter author name: ");
+                    string author = Console.ReadLine();
+                    Console.Write("Enter number of pages: ");
+                    int pages = int.Parse(Console.ReadLine());
+                    Console.Write("Enter price: ");
+                    double price = double.Parse(Console.ReadLine());
+                    Book book = new Book(name, author, pages, price);
+                    inventory.AddBook(book);
+                    Console.WriteLine("Book added successfully!");
+                    break;
+                case "2":
+                    inventory.DisplayBooks();
+                    break;
+                case "3":
+                    Console.WriteLine("Exiting...");
+                    return;
+                default:
+                    Console.WriteLine("Invalid choice. Please enter a valid option.");
+                    break;
+            }
+        }
+    }
+}

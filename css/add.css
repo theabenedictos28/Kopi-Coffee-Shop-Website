@@ -1,0 +1,109 @@
+/* Navbar */
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.navbar a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.navbar a.right {
+    float: right;
+}
+
+  /* Container */
+.container {
+    padding: 20px;
+}
+
+  /* Add Menu Form */
+.add-menu {
+    width: 50%;
+    float: left;
+}
+
+.add-menu h2 {
+    margin-bottom: 10px;
+}
+
+.add-menu label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.add-menu input[type="text"],
+.add-menu textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.add-menu input[type="file"] {
+    margin-top: 5px;
+}
+
+.add-menu input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.add-menu input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+  /* Menu Items Table */
+.menu-items {
+    width: 50%;
+    float: left;
+}
+
+.menu-items h2 {
+    margin-bottom: 10px;
+}
+
+.menu-items table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.menu-items th,
+.menu-items td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.menu-items th {
+    background-color: #f2f2f2;
+}
+
+.menu-items tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.menu-items tr:hover {
+    background-color: #ddd;
+}
